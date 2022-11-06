@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../dist/css/sidebar.scss";
 import Logo from "../dist/image/Logo.png";
 import { RiDashboardFill } from 'react-icons/ri';
 import { MdOnlinePrediction } from 'react-icons/md';
@@ -19,39 +18,27 @@ const Sidebar = () => {
         icon: RiDashboardFill,
       },
       {
-        title: "六都房價預測",
+        title: "House Price",
         icon: MdOnlinePrediction,
       },
       {
-        title: "關於我們",
+        title: "About",
         icon: BsFillPeopleFill,
       }
     ],
     []
   );
 
-  const sidebarVariants = {
-    true: {
-      left: '0'
-    },
-    false: {
-      left: '-100%'
-    }
-  }
-
   return (
     <>
       <div className="bars" onClick={() => setExpaned(!expanded)}>
         {expanded ? <IoClose className="icon" /> : <FaBars className="icon" />}
       </div>
-      <motion.div className='sidebar'
-        variants={sidebarVariants}
-        animate={window.innerWidth <= 768 ? `${expanded}` : ''}
-      >
+      <motion.div className={expanded ? 'sidebar active' : 'sidebar'}>
         {/* logo */}
         <div className="logo">
-          <img src={Logo} alt="logo" />
-          <h1>PROPERTY</h1>
+          <img className="img" src={Logo} alt="logo" />
+          <h1 className="title">PROPERTY</h1>
         </div>
         <div className="line"></div>
         <div className="menu">

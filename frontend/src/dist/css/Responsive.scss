@@ -1,0 +1,191 @@
+
+@media screen and (max-width: 1400px) {
+    .body{
+        .container{
+            .citycard{
+                #stylecitycard{
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 940px) {
+    .body{
+        .container{
+            .citycard{
+                grid-template-columns:  1fr;
+                #stylecitycard{
+                    grid-template-columns: 1fr 1fr 1fr;
+                    .card .MuiCardContent-root{
+                        .amount{
+                            font-size: 1.5rem;
+                            span{
+                                font-size: 14px;
+                            }
+                        }
+                        .title{
+                            font-size: 0.8rem;
+                        }
+                        .title-secondary{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+                .city-right-card{
+                    margin: 0.5rem auto;
+                    height: 250px;
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .body{
+        .container{
+            .citycard{
+                grid-template-columns:  1fr;
+                #stylecitycard{
+                    grid-template-columns: 1fr 1fr 1fr;
+                    .card .MuiCardContent-root{
+                        .amount{
+                            font-size: 1.2rem;
+                            span{
+                                font-size: 12px;
+                            }
+                        }
+                        .title{
+                            font-size: 0.5rem;
+                        }
+                        .title-secondary{
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+                .city-right-card{
+                    margin: 0.5rem auto;
+                    height: 250px;
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .body{ 
+        height: 120vh;
+        .container{
+            .citycard{
+                grid-template-columns:  1fr;
+                #stylecitycard{
+                    grid-template-columns: 1fr 1fr;
+                    .card .MuiCardContent-root{
+                        .amount{
+                            font-size: 1.8rem;
+                            span{
+                                font-size: 14px;
+                            }
+                        }
+                        .title{
+                            font-size: 0.8rem;
+                        }
+                        .title-secondary{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+                .city-right-card{
+                    margin: 0.5rem auto;
+                    height: 250px;
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .body{
+        .container{
+            .header{
+                h1{
+                    font-size: 24px;
+                }            
+                p{
+                    font-size: 14px;
+                }   
+            }
+            .citycard{
+                grid-template-columns:  1fr;
+                #stylecitycard{
+                    grid-template-columns: 1fr 1fr;
+                    .card .MuiCardContent-root{
+                        .amount{
+                            font-size: 1.5rem;
+                            span{
+                                font-size: 14px;
+                            }
+                        }
+                        .title{
+                            font-size: 0.5rem;
+                        }
+                        .title-secondary{
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+                .city-right-card{
+                    margin: 0.5rem auto;
+                    height: 250px;
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .body{
+        height: 180vh;
+        .container{
+            .header{
+                h1{
+                    font-size: 24px;
+                }            
+                p{
+                    font-size: 14px;
+                }   
+            }
+            .citycard{
+                grid-template-columns:  1fr;
+                #stylecitycard{
+                    grid-template-columns: 1fr;
+                    .card .MuiCardContent-root{
+                        .amount{
+                            font-size: 2rem;
+                            span{
+                                font-size: 16px;
+                            }
+                        }
+                        .title{
+                            font-size: 1.2rem;
+                        }
+                        .title-secondary{
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+                .city-right-card{
+                    margin: 0.5rem auto;
+                    height: 250px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

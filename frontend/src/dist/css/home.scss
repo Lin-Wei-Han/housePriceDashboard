@@ -8,3 +8,43 @@ body{
     height: 100vh;
     background: linear-gradient(to right bottom, #acffce, #b0ffe3, #bdfff3, #d0fffc, #e5fdff, #e3f9ff, #e4f5ff, #e6f1ff, #d3e8ff, #bee0ff, #a6d8ff, #8ad1ff);
 }
+
+.citycard{
+    display: grid;
+    grid-template-columns: 70fr 30fr ;
+}
+
+.city-right-card{
+    content: "";
+    min-width: 250px;
+    margin: auto 2rem  auto  0;
+    height: 95%;
+    box-shadow:2px 2px 4px 0.3px #9f9f9f;
+    border-radius:16px;
+    background-color: white;
+}
+
+
+/* container */
+.container{
+    margin-left: 280px;
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        margin-left: 120px;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .container{
+        margin-left: 80px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .container{
+        margin-left: 10px;
+    }
+}

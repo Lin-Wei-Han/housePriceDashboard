@@ -38,6 +38,7 @@ for (i in 1:length((dataset))) {
       移轉編號)) %>%
     filter(主要用途 == "住家用") %>%
     mutate(電梯 = ifelse(is.na(電梯), 0, 電梯))
-  loc = paste0("/home/chanyu/Desktop/school/DataMining/housePriceDashboard/dataset/", names(dataset[i]), ".csv")
+  loc = paste0("/home/chanyu/Desktop/school/DataMining/project/dataset/dataset/", 
+               names(dataset[i]), ".csv")
   write.csv(data, loc)
 }

@@ -10,6 +10,7 @@ const Citycard = () => {
         return `${result}%`
     }
 
+
     const cardData = React.useMemo(
         () => [
             {
@@ -51,17 +52,17 @@ const Citycard = () => {
             {cardData.map((item) => (
                 <div sx={{ minWidth: 200 }} className="card">
                     <CardContent>
-                        <h1 className="amount">
+                        <h1 className='amount'>
                             {item.amount}
                             <span className={item.growth > 0 ? "up" : "down"}>
                                 {item.growth > 0 ? <TiArrowUpThick /> : <TiArrowDownThick />}
                                 {getAbs(item.growth)}
                             </span>
                         </h1>
-                        <h3 className='title'>
+                        <h3 className="title">
                             {item.title}
                         </h3>
-                        <p className='title-secondary'>
+                        <p className="title-secondary">
                             與前季比較
                         </p>
                     </CardContent>

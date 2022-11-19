@@ -9,7 +9,7 @@ import pickle
 import gzip
 import numpy as np
 
-#app() frontend page
+# app() frontend page
 app = Flask(__name__, static_folder='frontend/build')
 
 # CORS

@@ -1,0 +1,21 @@
+.form-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+    margin-left: 20px;
+}
+
+.MuiFormControl-root {
+    z-index: 1;
+    border-radius: 4px;
+    width: 30%;
+    height: 80px;
+    margin-top: 20px;
+    .MuiInputBase-root{
+        background-color: white;
+    }
+}
+
+.MuiButtonBase-root{
+    width: 30%;
+}

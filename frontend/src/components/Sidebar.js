@@ -48,7 +48,7 @@ const Sidebar = () => {
         <div className="menu">
           {sidebarItem.map((item, index) => {
             return (
-              <Link to={item.url} key={index}>
+              <Link to={item.url} key={index} style={{ color: 'white' }} activeStyle={{ color: 'white' }}>
                 <div
                   className={selected === index ? "menuItem active" : "menuItem"}
                   onClick={() => setSelected(index)}

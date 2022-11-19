@@ -107,6 +107,14 @@
             }
         }
     }
+
+    .MuiFormControl-root {    
+        width: 50%;
+    }
+    
+    .MuiButtonBase-root{
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 495px) {
@@ -155,7 +163,7 @@
         .container{
             .header{
                 h1{
-                    font-size: 24px;
+                    font-size: 20px;
                 }            
                 p{
                     font-size: 14px;

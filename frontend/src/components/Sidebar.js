@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../dist/image/Logo.png";
 import { RiDashboardFill } from 'react-icons/ri';
 import { MdOnlinePrediction } from 'react-icons/md';
@@ -16,14 +17,17 @@ const Sidebar = () => {
       {
         title: "Dashboard",
         icon: RiDashboardFill,
+        url: "/",
       },
       {
         title: "House Price",
         icon: MdOnlinePrediction,
+        url: "/housePrice",
       },
       {
         title: "About",
         icon: BsFillPeopleFill,
+        url: "/about",
       }
     ],
     []
@@ -44,14 +48,15 @@ const Sidebar = () => {
         <div className="menu">
           {sidebarItem.map((item, index) => {
             return (
-              <div
-                className={selected === index ? "menuItem active" : "menuItem"}
-                key={index}
-                onClick={() => setSelected(index)}
-              >
-                <item.icon className="icon" />
-                <p>{item.title}</p>
-              </div>
+              <Link to={item.url} key={index}>
+                <div
+                  className={selected === index ? "menuItem active" : "menuItem"}
+                  onClick={() => setSelected(index)}
+                >
+                  <item.icon className="icon" />
+                  <p>{item.title}</p>
+                </div>
+              </Link>
             );
           })}
         </div>

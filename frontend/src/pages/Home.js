@@ -5,6 +5,8 @@ import Citycard from '../components/Citycard';
 
 
 const Home = () => {
+
+
     return (
         <section className='body'>
             <Sidebar />

@@ -49,8 +49,8 @@ const Citycard = () => {
 
     return (
         <section className={stylecitycard} id="stylecitycard">
-            {cardData.map((item) => (
-                <div sx={{ minWidth: 200 }} className="card">
+            {cardData.map((item, index) => (
+                <div key={index} sx={{ minWidth: 200 }} className="card">
                     <CardContent>
                         <h1 className='amount'>
                             {item.amount}

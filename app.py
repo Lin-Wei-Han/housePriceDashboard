@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_restful import Api, Resource
 import os
 from pydantic import BaseModel
+import joblib
 import pickle
 import gzip
 import numpy as np
@@ -29,8 +30,9 @@ def serve(path):
         return send_from_directory(app.static_folder, 'index.html')
 
 # open model file
-with gzip.open('randomForest_houseprice.pkl', 'rb') as f:
-    housePriceModel = pickle.load(f)
+""" with gzip.open('randomForest_houseprice.pkl', 'rb') as f:
+    housePriceModel = pickle.load(f) """
+housePriceModel = joblib.load("RF_model.joblib")
 
 @app.get('/getAPI')
 def index():

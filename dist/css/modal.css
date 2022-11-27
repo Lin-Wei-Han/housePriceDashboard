@@ -1,0 +1,30 @@
+.ReactModal__Content {
+  background-color: white;
+}
+
+.ReactModal__Overlay {
+  background-color: black;
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.predict-card {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+.predict-card img {
+  width: 15rem;
+  margin-left: -20px;
+}
+.predict-card h1 {
+  font-size: 1.5rem;
+  margin: -10px 0 10px 0;
+}
+.predict-card p {
+  margin: 10px 0;
+  font-size: 2rem;
+  font-weight: 400;
+}

@@ -53,6 +53,8 @@ const ApexChart = () => {
                 },
             },
         },
+
+
     };
 
     React.useEffect(() => {
@@ -87,6 +89,3 @@ const ApexChart = () => {
 }
 
 export default ApexChart;
-
-
-

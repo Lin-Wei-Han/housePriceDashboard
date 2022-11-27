@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import Citycard from '../components/Citycard';
+import ApexChart from '../components/ApexChart';
 
 
 const Home = () => {
@@ -14,9 +15,8 @@ const Home = () => {
                 <Header />
                 <div className='citycard'>
                     <Citycard />
-                    <div className='city-right-card'>
-                    </div>
                 </div>
+                <ApexChart />
             </section>
         </section>
     )

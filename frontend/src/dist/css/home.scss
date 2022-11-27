@@ -5,7 +5,7 @@ body{
 
 .body{
     content: "";
-    height: 100vh;
+    height: 150vh;
     background: linear-gradient(to right bottom, #acffce, #b0ffe3, #bdfff3, #d0fffc, #e5fdff, #e3f9ff, #e4f5ff, #e6f1ff, #d3e8ff, #bee0ff, #a6d8ff, #8ad1ff);
 }
 
@@ -13,6 +13,7 @@ body{
     display: grid;
     grid-template-columns: 70fr 30fr ;
 }
+
 
 .city-right-card{
     content: "";

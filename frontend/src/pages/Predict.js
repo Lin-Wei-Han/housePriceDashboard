@@ -46,7 +46,6 @@ const Predict = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-
     const handleCityChange = (e) => {
         setCity(e.target.value);
     };
@@ -74,7 +73,6 @@ const Predict = () => {
             console.log(res['data']['prediction']);
             setPrediction(res['data']['prediction'])
             handleOpen()
-            //setTimeout(() => { handleClose() }, 6000)
         });
     };
 

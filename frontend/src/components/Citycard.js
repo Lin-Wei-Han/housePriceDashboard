@@ -14,34 +14,34 @@ const Citycard = () => {
     const cardData = React.useMemo(
         () => [
             {
-                amount: "22,500,000",
+                amount: "13,712,857",
                 title: "台北市｜當期房屋交易均價",
-                growth: 11,
+                growth: -28,
             },
             {
-                amount: "17,500,000",
-                title: "新北市｜當期房屋交易均價",
-                growth: 21,
+                amount: "7,391,304",
+                title: "新北市｜當月房屋交易均價",
+                growth: -38,
             },
             {
-                amount: "13,280,000",
-                title: "桃園市｜當期房屋交易均價",
+                amount: "7,907,307",
+                title: "桃園市｜當月房屋交易均價",
                 growth: -5,
             },
             {
-                amount: "16,800,000",
-                title: "台中市｜當期房屋交易均價",
-                growth: 8,
-            },
-            {
-                amount: "12,950,000",
-                title: "台南市｜當期房屋交易均價",
-                growth: 3,
-            },
-            {
-                amount: "23,350,000",
-                title: "高雄市｜當期房屋交易均價",
+                amount: "11,000,000",
+                title: "台中市｜當月房屋交易均價",
                 growth: -10,
+            },
+            {
+                amount: "4,672,105",
+                title: "台南市｜當月房屋交易均價",
+                growth: -55,
+            },
+            {
+                amount: "4,395,000",
+                title: "高雄市｜當月房屋交易均價",
+                growth: -53,
             },
         ],
         []
@@ -63,7 +63,7 @@ const Citycard = () => {
                             {item.title}
                         </h3>
                         <p className="title-secondary">
-                            與前季比較
+                            與前月比較
                         </p>
                     </CardContent>
                 </div>

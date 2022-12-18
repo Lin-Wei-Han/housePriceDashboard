@@ -162,7 +162,7 @@ p = fit(PCA, data', maxoutdim = 2)
 P = projection(p)
 P'*(data[1,:]-mean(p))
 Yte = MultivariateStats.transform(p, data')
-Plots.scatter(filtered[1,:], filtered[2,:])
+Plots.scatter(filte red[1,:], filtered[2,:])
 Plots.xlabel!("pca component1")
 Plots.ylabel!("pca component2")
 

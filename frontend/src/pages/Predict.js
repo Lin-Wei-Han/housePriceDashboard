@@ -73,8 +73,16 @@ const Predict = () => {
             console.log(res['data']['prediction']);
             setPrediction(res['data']['prediction'])
             handleOpen()
+            usersPredict(Number(_buildingArea), Number(_roomAmount), Number(_livingroomAmount), Number(_bathroomAmount), res['data']['prediction'])
         });
     };
+
+    const usersPredict = (_buildingArea, _roomAmount, _livingroomAmount, _bathroomAmount, _prediction) => {
+        const postData = { buildingArea: _buildingArea, roomAmount: _roomAmount, livingroomAmount: _livingroomAmount, bathroomAmount: _bathroomAmount, prediction: _prediction };
+        predictResultAPIs.usersPredict(postData).then((res) => {
+            console.log(res)
+        });
+    }
 
     const onSubmit = () => {
         predictResult(building, room, livingroom, bathroom)

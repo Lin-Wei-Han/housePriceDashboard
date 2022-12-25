@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 import csv
 import math
+from mongodb import insert_test_doc
 
 # app() frontend page
 app = Flask(__name__, static_folder='frontend/build')
@@ -125,7 +126,20 @@ class housePricePredict(Resource):
         result = housePriceModel.predict(input)
         return {"prediction": int(result)}
 
+class usersPredict(Resource):
+    def post(item: HousePriceItem):
+        insertData = request.get_json()
+        x1=insertData['buildingArea']
+        x2=insertData['roomAmount']
+        x3=insertData['livingroomAmount']
+        x4=insertData['bathroomAmount']
+        x5=insertData['prediction']
+        insert_test_doc(x1,x2,x3,x4,x5)
+        print(x1,x2,x3,x4,x5)
+        return {"success"}
+
 api.add_resource(housePricePredict, '/getHousePrice')
+api.add_resource(usersPredict, '/usersPredict')
 
 if __name__ == "__main__":
 	app.run(host='localhost', port=5000, debug=True)

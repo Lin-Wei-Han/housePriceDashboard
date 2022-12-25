@@ -18,4 +18,13 @@ const predictResult = (_data) => {
     });
 };
 
-export { predictResult, getAPI };
+const usersPredict = (_data) => {
+    return axios({
+        method: "post",
+        url: `${baseUrl}/usersPredict`,
+        data: _data,
+    });
+};
+
+
+export { predictResult, getAPI, usersPredict };

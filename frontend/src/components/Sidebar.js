@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Logo from "../dist/image/Logo.png";
 import { RiDashboardFill } from 'react-icons/ri';
 import { MdOnlinePrediction } from 'react-icons/md';
-import { BsFillPeopleFill } from 'react-icons/bs';
 import { FaBars } from 'react-icons/fa';
 import { IoClose } from "react-icons/io5";
 import { motion } from "framer-motion";
@@ -11,6 +10,11 @@ import { motion } from "framer-motion";
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
   const [expanded, setExpaned] = useState(true);
+
+  const handleClick = (index) => {
+    console.log(index);
+    setSelected(index)
+  }
 
   const sidebarItem = React.useMemo(
     () => [
@@ -23,11 +27,6 @@ const Sidebar = () => {
         title: "House Price",
         icon: MdOnlinePrediction,
         url: "/housePrice",
-      },
-      {
-        title: "About",
-        icon: BsFillPeopleFill,
-        url: "/about",
       }
     ],
     []
@@ -51,7 +50,7 @@ const Sidebar = () => {
               <Link to={item.url} key={index} style={{ color: 'white' }} >
                 <div
                   className={selected === index ? "menuItem active" : "menuItem"}
-                  onClick={() => setSelected(index)}
+                  onClick={() => handleClick(index)}
                 >
                   <item.icon className="icon" />
                   <p>{item.title}</p>

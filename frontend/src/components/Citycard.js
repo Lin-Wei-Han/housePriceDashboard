@@ -1,6 +1,7 @@
 import React from 'react';
 import CardContent from '@mui/material/CardContent';
 import { css } from "@emotion/css/macro";
+import AnimatedNumbers from "react-animated-numbers";
 import { TiArrowUpThick, TiArrowDownThick } from "react-icons/ti";
 
 const Citycard = () => {
@@ -14,32 +15,32 @@ const Citycard = () => {
     const cardData = React.useMemo(
         () => [
             {
-                amount: "13,712,857",
+                amount: 13712857,
                 title: "台北市｜當期房屋交易均價",
                 growth: -28,
             },
             {
-                amount: "7,391,304",
+                amount: 7391304,
                 title: "新北市｜當月房屋交易均價",
                 growth: -38,
             },
             {
-                amount: "7,907,307",
+                amount: 7907307,
                 title: "桃園市｜當月房屋交易均價",
                 growth: -5,
             },
             {
-                amount: "11,000,000",
+                amount: 11000000,
                 title: "台中市｜當月房屋交易均價",
                 growth: -10,
             },
             {
-                amount: "4,672,105",
+                amount: 4672105,
                 title: "台南市｜當月房屋交易均價",
                 growth: -55,
             },
             {
-                amount: "4,395,000",
+                amount: 4395000,
                 title: "高雄市｜當月房屋交易均價",
                 growth: -53,
             },
@@ -53,10 +54,21 @@ const Citycard = () => {
                 <div key={index} sx={{ minWidth: 200 }} className="card">
                     <CardContent>
                         <h1 className='amount'>
-                            {item.amount}
+                            <AnimatedNumbers
+                                includeComma
+                                animateToNumber={item.amount}
+                                configs={(number, index) => {
+                                    return { mass: 1, tension: 250 * (index + 1), friction: 140 };
+                                }}
+                            ></AnimatedNumbers>
                             <span className={item.growth > 0 ? "up" : "down"}>
                                 {item.growth > 0 ? <TiArrowUpThick /> : <TiArrowDownThick />}
-                                {getAbs(item.growth)}
+                                <AnimatedNumbers
+                                    animateToNumber={item.growth}
+                                    configs={(number, index) => {
+                                        return { mass: 1, tension: 250 * (index + 1), friction: 140 };
+                                    }}
+                                ></AnimatedNumbers>
                             </span>
                         </h1>
                         <h3 className="title">
@@ -91,6 +103,8 @@ export const stylecitycard = css`
             padding: 8px 16px;
 
             .amount{
+                display: flex;
+                align-items: flex-end;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-weight:300;
                 font-size: 1.8rem;
@@ -102,9 +116,13 @@ export const stylecitycard = css`
                     font-size: 16px;
                     letter-spacing: 0px;
                     &.up{
+                        display: flex;
+                        align-items: flex-end;
                         color:#3DCE76;
                     }
                     &.down{
+                        display: flex;
+                        align-items: flex-end;
                         color:#DD4B39;
                     }
                 }

@@ -1,18 +1,27 @@
 #from fastapi import FastAPI
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory,jsonify
 from flask_cors import CORS
 from flask_restful import Api, Resource
 import os
 from pydantic import BaseModel
 import joblib
-import pickle
-import gzip
-import json
 import numpy as np
 import pandas as pd
 import csv
 import math
 from mongodb import insert_test_doc
+from dotenv import load_dotenv,find_dotenv
+import os 
+import pprint
+from pymongo import MongoClient
+from collections import Counter
+
+load_dotenv(find_dotenv())
+
+mongodb_url = os.environ.get("MONGODB_URL")
+client = MongoClient(mongodb_url)
+
+printer = pprint.PrettyPrinter() 
 
 # app() frontend page
 app = Flask(__name__, static_folder='frontend/build')
@@ -105,7 +114,39 @@ def getTYhousePrice():
         for i in ty: 
             tytime.append(i[0])
             typrice.append(math.trunc(int(i[1])))
-    return {"time":tytime,"price":typrice}       
+    return {"time":tytime,"price":typrice}    
+
+@app.get('/getUsers')
+def getUsers():
+    bathroomAmount=[]
+    buildingArea=[]
+    livingroomAmount=[]
+    prediction=[]
+    roomAmount=[]
+    users_collection = client.users.prediction
+    dataset = users_collection.find()
+    for i in dataset: 
+        printer.pprint(i)
+        bathroomAmount.append(i["bathroomAmount"])
+        buildingArea.append(i["buildingArea"])
+        livingroomAmount.append(i["livingroomAmount"])
+        prediction.append(i["prediction"])
+        roomAmount.append(i["roomAmount"])
+    bathroom = []
+    livingroom = []
+    room = []
+    building = []
+    for i in sorted(Counter(bathroomAmount).keys()):
+        bathroom.append(i)
+    for i in sorted(Counter(livingroomAmount).keys()):
+        livingroom.append(i)
+    for i in sorted(Counter(roomAmount).keys()):
+        room.append(i)
+    for i in sorted(Counter(buildingArea).keys()):
+        building.append(i)
+    return jsonify({"bathroomAmount":list(bathroom),"livingroomAmount":list(livingroom),"roomAmount":list(room),"buildingArea":list(building)},
+    {"bathroomAmount":bathroomAmount,"livingroomAmount":livingroomAmount,"roomAmount":roomAmount,"buildingArea":buildingArea,
+    "prediction":prediction})
 
 # BaseModel check post data type
 class HousePriceItem(BaseModel):

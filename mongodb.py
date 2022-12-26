@@ -13,7 +13,8 @@ dbs = client.list_database_names()
 test_db = client.users
 
 collections = test_db.list_collection_names()
-print(collections)
+
+printer = pprint.PrettyPrinter() 
 
 def insert_test_doc(x1,x2,x3,x4,x5):
     collection = client.users.prediction
@@ -24,6 +25,5 @@ def insert_test_doc(x1,x2,x3,x4,x5):
         "bathroomAmount":x4,
         "prediction":x5
     }
-    print(data)
     inserted_id = collection.insert_one(data).inserted_id
     print(inserted_id)

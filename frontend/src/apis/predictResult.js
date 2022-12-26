@@ -10,6 +10,13 @@ const getAPI = () => {
     });
 };
 
+const getUsers = () => {
+    return axios({
+        method: "get",
+        url: `${baseUrl}/getUsers`
+    });
+};
+
 const predictResult = (_data) => {
     return axios({
         method: "post",
@@ -27,4 +34,4 @@ const usersPredict = (_data) => {
 };
 
 
-export { predictResult, getAPI, usersPredict };
+export { predictResult, getAPI, usersPredict, getUsers };

@@ -1,21 +1,35 @@
+
 .form-box{
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    //grid-template-columns: 1fr;
+    justify-content:space-around;
+    flex-wrap:wrap;
     margin-top: 2rem;
     margin-left: 20px;
+    flex-basis:150px;
+    .MuiButtonBase-root.MuiButton-root{
+        height: 60px;
+        width: 15rem;
+    }
+}
+
+.chart{
+margin-top: 2rem;
+}
+
+.pie{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
 }
 
 .MuiFormControl-root {
     z-index: 1;
     border-radius: 4px;
-    width: 30%;
+    width: 15rem;
     height: 80px;
     margin-top: 20px;
     .MuiInputBase-root{
         background-color: white;
     }
-}
-
-.MuiButtonBase-root{
-    width: 30%;
 }

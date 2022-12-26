@@ -10,6 +10,7 @@ import Modal from "react-modal";
 import "../dist/css/form.scss";
 import "../dist/css/modal.scss";
 import sucess from '../dist/image/sucess.gif';
+import ApexChart from '../components/UsersChart';
 
 const customStyles = {
     overlay: {
@@ -122,49 +123,54 @@ const Predict = () => {
                 <Sidebar />
                 <section className='container'>
                     <Header />
-                    <div className='form-box'>
-                        <TextField
-                            id="outlined-select-currency"
-                            select
-                            label="縣市別"
-                            value={city}
-                            onChange={handleCityChange}
-                        >
-                            {currencies.map((option) => (
-                                <MenuItem key={option.value} value={option.value}>
-                                    {option.value}
-                                </MenuItem>
-                            ))}
-                        </TextField>
-                        <TextField
-                            requiredid="outlined-basic"
-                            label="坪數（含公設）"
-                            variant="outlined"
-                            value={building}
-                            onChange={handleBuildingChange}
-                        />
-                        <TextField
-                            requiredid="outlined-basic"
-                            label="房間數"
-                            variant="outlined"
-                            value={room}
-                            onChange={handleRoomChange}
-                        />
-                        <TextField
-                            requiredid="outlined-basic"
-                            label="廳數"
-                            variant="outlined"
-                            value={livingroom}
-                            onChange={handleLivingroomChange}
-                        />
-                        <TextField
-                            requiredid="outlined-basic"
-                            label="衛浴數"
-                            variant="outlined"
-                            value={bathroom}
-                            onChange={handleBathroomChange}
-                        />
-                        <Button variant="contained" type="submit" onClick={() => onSubmit()}>立即預測</Button>
+                    <div className='content'>
+                        <div className='form-box'>
+                            <TextField
+                                id="outlined-select-currency"
+                                select
+                                label="縣市別"
+                                value={city}
+                                onChange={handleCityChange}
+                            >
+                                {currencies.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                        {option.value}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+                            <TextField
+                                requiredid="outlined-basic"
+                                label="坪數（含公設）"
+                                variant="outlined"
+                                value={building}
+                                onChange={handleBuildingChange}
+                            />
+                            <TextField
+                                requiredid="outlined-basic"
+                                label="房間數"
+                                variant="outlined"
+                                value={room}
+                                onChange={handleRoomChange}
+                            />
+                            <TextField
+                                requiredid="outlined-basic"
+                                label="廳數"
+                                variant="outlined"
+                                value={livingroom}
+                                onChange={handleLivingroomChange}
+                            />
+                            <TextField
+                                requiredid="outlined-basic"
+                                label="衛浴數"
+                                variant="outlined"
+                                value={bathroom}
+                                onChange={handleBathroomChange}
+                            />
+                            <Button className='btn' variant="contained" type="submit" onClick={() => onSubmit()}>立即預測</Button>
+                        </div>
+                        <div className='chart'>
+                            <ApexChart />
+                        </div>
                     </div>
                 </section>
             </section >

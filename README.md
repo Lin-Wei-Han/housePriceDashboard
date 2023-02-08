@@ -8,7 +8,7 @@
 
 專案以內政部實價登陸公布之交易紀錄，實現六都房價走勢儀表板。以隨機森林創建預測模型，針對房價進行預測，分析六都差異。
 
-報告書：
+報告書：[六都房價預測與分析](https://1drv.ms/b/s!AiTjghiuXYI5ymtoZSoMJyWt-ZZu?e=AvylMZ)
 Dashboard：https://taiwanhouseprice.herokuapp.com/
 
 #### 前端佈局
@@ -19,7 +19,7 @@ Dashboard：https://taiwanhouseprice.herokuapp.com/
    網站以 [React](https://zh-hant.reactjs.org/) 前端框架建構，底層語言為 Javascript。首頁展示六都最新一期的房價即時資訊，以及當月與前月的房價月增率。也提供詳細近年六房房價趨勢圖，同時比較同時間、不同縣市間的房價走勢是否也存在差異。
 
 2. **次頁 House Price**
-   第二頁佈局安排，以表單的形式並串接 API，當使用者送出預測資料時，便會及時返回預測結果。同時使用者的預測資料會同時進入資料庫，並以圖表呈現。進一步分析使用者的行為。
+   第二頁佈局安排，以表單的形式並串接 API，當使用者送出預測資料時，便會即時返回預測結果。同時使用者的預測資料會同時進入資料庫，並以圖表呈現。進一步分析使用者的行為。
 
 #### 後端
 

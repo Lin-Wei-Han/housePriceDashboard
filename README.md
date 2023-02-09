@@ -1,6 +1,7 @@
 <h1 align="center">
   <p align="center">HousePriceDashboard</p>
   <a href="https://computervisiontemplate.herokuapp.com/"><img src="https://upload.cc/i1/2023/02/08/yluw0p.png" alt="app"></a>
+</h1>
 
 ## About
 
